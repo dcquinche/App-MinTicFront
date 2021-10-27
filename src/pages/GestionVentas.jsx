@@ -232,7 +232,7 @@ const TablaVentas=({listaVentas, setConsulta, getToken})=>{
     },[buscar, listaVentas]);
 
     return(
-            <div className='flex flex-col items-center justify-center'>
+            <div className='flex flex-col items-center justify-center w-full'>
                 <h1 className='font-bold text-4xl text-green-500 my-5 text-center'> Listado de Ventas</h1>
                 <input placeholder='Buscar'
                 value={buscar}
