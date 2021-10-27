@@ -24,7 +24,7 @@ const Usuarios=()=>{
         const obtenerUsuarios = async ()=>{
             const options = {
                 method: 'GET',
-                url: 'http://localhost:5000/usuarios/',
+                url: 'https://intense-castle-32619.herokuapp.com/usuarios/',
                 headers: {'Content-Type': 'application/json', Authorization: getToken()}
             }
               await axios.request(options).then(function (response) {
@@ -96,7 +96,7 @@ const RegistroUsuarios=({setMostrarTabla, listaUsuarios, setUsuarios, getToken})
 
         const options = {
             method: 'POST',
-            url: 'http://localhost:5000/usuarios/',
+            url: 'https://intense-castle-32619.herokuapp.com/usuarios/',
             headers: { 'Content-Type': 'application/json', Authorization: getToken() },
             data: { documento: nuevoUsuario.documento, name: nuevoUsuario.name, email: nuevoUsuario.email, telefono: nuevoUsuario.telefono, estado: nuevoUsuario.estado, rol: nuevoUsuario.rol },
             };
@@ -258,7 +258,7 @@ const FilaUsuario = ({usuarios, setConsulta, getToken})=>{
     const actualizarUsuario = async ()=>{
         const options = {
             method: 'PATCH',
-            url: `http://localhost:5000/usuarios/${usuarios._id}`,
+            url: `https://intense-castle-32619.herokuapp.com/usuarios/${usuarios._id}`,
             headers: {'Content-Type': 'application/json', Authorization: getToken()},
             data: { ...infoEditarUsuario },
           };

@@ -8,7 +8,7 @@ const getToken =()=>{
 const obtenerUsuarioRegistrado = async ()=>{
 const options = {
     method: 'GET',
-    url: 'http://localhost:5000/usuarios/self',
+    url: 'https://intense-castle-32619.herokuapp.com/usuarios/self',
     headers: {'Content-Type': 'application/json', Authorization: getToken()}
 }
 await axios.request(options).catch(function (error) {console.error(error)});
