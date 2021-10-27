@@ -24,7 +24,7 @@ const Sidebar = () => {
         <Ruta icono='' ruta='/GestionVentas' nombre='Ventas' />
         <Ruta icono='' ruta='/GestionProductos' nombre='Productos'/>
       </div>
-      <button onClick={() => cerrarSesion() } className='bg-indigo-500 p-1 text-white rounded-md shadow-md hover:bg-red-400'>
+      <button onClick={() => cerrarSesion() } className='bg-red-400 p-1 text-white rounded-md shadow-md hover:bg-red-600'>
        Cerrar Sesión
       </button>
     </nav>
