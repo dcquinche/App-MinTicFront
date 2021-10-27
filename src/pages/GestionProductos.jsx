@@ -199,7 +199,7 @@ const FormularioRegistroProductos = ({setMostrarTabla, listaProductos, setProduc
                     />
                 </label>
                 </div>
-                <div className='flex items-center'>
+                <div className='flex flex-row items-center justify-center'>
                 <label className='flex flex-col mx-5' htmlFor='estado'>
                     Estado
                     <select           
@@ -286,7 +286,7 @@ const FilaProducto = ({productos, setConsulta, getToken}) => {
         variante:productos.variante,
         origen:productos.origen,
         precio:productos.precio,
-        estado:productos.estado
+        estado:productos.estado,
     })
 
     const actualizarProducto = async ()=>{
