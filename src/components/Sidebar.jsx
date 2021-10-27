@@ -20,9 +20,9 @@ const Sidebar = () => {
       </Link>
 
       <div className='my-4'>
-        <Ruta icono='' ruta='/GestionUsuarios' nombre='Usuarios' className='bg-indigo-500 p-1 text-white rounded-md shadow-md hover:bg-red-400' />
-        <Ruta icono='' ruta='/GestionVentas' nombre='Ventas' className='bg-indigo-500 p-1 text-white rounded-md shadow-md hover:bg-red-400' />
-        <Ruta icono='' ruta='/GestionProductos' nombre='Productos' className='bg-indigo-500 p-1 text-white rounded-md shadow-md hover:bg-red-400' />
+        <Ruta icono='' ruta='/GestionUsuarios' nombre='Usuarios' />
+        <Ruta icono='' ruta='/GestionVentas' nombre='Ventas' />
+        <Ruta icono='' ruta='/GestionProductos' nombre='Productos'/>
       </div>
       <button onClick={() => cerrarSesion() } className='bg-indigo-500 p-1 text-white rounded-md shadow-md hover:bg-red-400'>
        Cerrar Sesión
@@ -37,8 +37,8 @@ const Ruta = ({ icono, ruta, nombre }) => {
     <Link to={ruta}>
       <button
         className={`p-1 my-2  bg-${
-          isActive ? 'indigo' : 'gray'
-        }-700 hover:bg-indigo-900 flex w-full items-center text-white rounded-md`}
+          isActive ? 'indigo' : 'to-blue-500'
+        }-700 hover:bg-red-400 flex w-full items-center text-white rounded-md`}
       >
         <icon className={`${icono} w-10`} />
         {nombre}
