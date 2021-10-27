@@ -303,7 +303,7 @@ const FilaUsuario = ({usuarios, setConsulta, getToken})=>{
             <select value={infoEditarUsuario.rol} onChange={(e)=>setInfoEditarUsuario({...infoEditarUsuario, rol:e.target.value})} >
                 <option disabled value={0}>Seleccione una opción</option>
                 <option value="vendedor">Vendedor</option>
-                <option value="admin">Administrador</option>
+                <option value="administrador">Administrador</option>
             </select>
             </td>
             </>
