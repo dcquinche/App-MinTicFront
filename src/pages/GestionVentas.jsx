@@ -145,8 +145,8 @@ const RegistroVentas=({setMostrarTabla, listaVentas, setVentas, getToken})=>{
                     <input 
                         name='cantidad' 
                         className='bg-yellow-50 border border-green-600 p-2 rounded-lg my-2 w-50'
-                        type='text' 
-                        placeholder='Garantía, etc.' 
+                        type='number' 
+                        placeholder='3' 
                         required/>
                 </label>
                 <label className='flex flex-col' htmlFor='preciounitario'> 
@@ -154,7 +154,7 @@ const RegistroVentas=({setMostrarTabla, listaVentas, setVentas, getToken})=>{
                     <input 
                         name='preciounitario' 
                         className='bg-yellow-50 border border-green-600 p-2 rounded-lg my-2 w-50'
-                        type='text' 
+                        type='number' 
                         placeholder='1000' />
                 </label>
                 <label className='flex flex-col' htmlFor='fechaventa'> 
@@ -243,9 +243,9 @@ const TablaVentas=({listaVentas, setConsulta, getToken})=>{
                     <thead>
                     <tr>
                         <th className='border border-green-600'>ID</th>
-                        <th className='border border-green-600'>Total venta</th>
-                        <th className='border border-green-600'>Cantidad unidades producto</th>
-                        <th className='border border-green-600'>Precio producto</th>
+                        <th className='border border-green-600'>Total</th>
+                        <th className='border border-green-600'>Cantidad</th>
+                        <th className='border border-green-600'>Precio unitario</th>
                         <th className='border border-green-600'>Fecha de Venta</th>
                         <th className='border border-green-600'>ID cliente</th>
                         <th className='border border-green-600'>Nombre cliente</th>
