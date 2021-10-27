@@ -19,7 +19,7 @@ const Sidebar = () => {
         <ImagenSidebar />
       </Link>
 
-      <div flex className='my-4'>
+      <div className='my-4'>
         <Ruta icono='' ruta='/GestionUsuarios' nombre='Usuarios' />
         <Ruta icono='' ruta='/GestionVentas' nombre='Ventas' />
         <Ruta icono='' ruta='/GestionProductos' nombre='Productos'/>
