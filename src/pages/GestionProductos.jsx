@@ -100,7 +100,7 @@ const FormularioRegistroProductos = ({setMostrarTabla, listaProductos, setProduc
             method: 'POST',
             url: 'https://intense-castle-32619.herokuapp.com/productos/',
             headers: { 'Content-Type': 'application/json', Authorization: getToken() },
-            data: { id: nuevoProducto.id, nombre: nuevoProducto.nombre, linea: nuevoProducto.linea, variante: nuevoProducto.variante, origen: nuevoProducto.origen, precio: nuevoProducto.precio},
+            data: { id: nuevoProducto.id, nombre: nuevoProducto.nombre, linea: nuevoProducto.linea, variante: nuevoProducto.variante, origen: nuevoProducto.origen, precio: nuevoProducto.precio, estado: nuevoProducto.estado},
             };
               
         await axios
@@ -197,6 +197,19 @@ const FormularioRegistroProductos = ({setMostrarTabla, listaProductos, setProduc
                         required
                     />
                 </label>
+                <label className='flex flex-col mx-5' htmlFor='estado'>
+                    Estado
+                    <select           
+                        name='estado' 
+                        className='bg-gray-50 border border-blue-600 p-2 rounded-lg my-2 w-50'
+                        required
+                        defaultValue={0}
+                    >
+                        <option disabled value={0}>Seleccione el estado</option>
+                        <option>Disponible</option>
+                        <option>No Disponible</option>
+                    </select>
+                </label>
                 </div>
 
             <div className='my-4' align='center'>
@@ -243,6 +256,7 @@ const TablaProductos = ({listaProductos, setConsulta, getToken}) => {
                         <th className='border border-blue-600'>Variante</th>
                         <th className='border border-blue-600'> Orígen </th>
                         <th className='border border-blue-600'>Precio</th>
+                        <th className='border border-blue-600'>Estado</th>
                         <th className='border border-blue-600'>Editar</th>
                     </tr>
                 </thead>
@@ -268,6 +282,7 @@ const FilaProducto = ({productos, setConsulta, getToken}) => {
         variante:productos.variante,
         origen:productos.origen,
         precio:productos.precio,
+        estado:productos.estado
     })
 
     const actualizarProducto = async ()=>{
@@ -326,6 +341,13 @@ const FilaProducto = ({productos, setConsulta, getToken}) => {
             <td>
                 <input type='number' value={infoEditarProducto.precio} onChange={(e)=>setInfoEditarProducto({...infoEditarProducto, precio:e.target.value})} />
             </td>
+            <td>
+            <select value={infoEditarProducto.estado} onChange={(e)=>setInfoEditarProducto({...infoEditarProducto, estado:e.target.value})} >
+                <option disabled value={0}>Seleccione el estado</option>
+                <option>Disponible</option>
+                <option>No Disponible</option>
+            </select>
+            </td>
             </>
         ):(
             <>
@@ -335,6 +357,7 @@ const FilaProducto = ({productos, setConsulta, getToken}) => {
             <td>{productos.variante}</td>
             <td>{productos.origen}</td>
             <td>{productos.precio}</td>
+            <td>{productos.estado}</td>
             </>
         )}
         <td>
