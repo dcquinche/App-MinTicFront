@@ -20,9 +20,9 @@ const Sidebar = () => {
       </Link>
 
       <div className='my-4'>
-        <Ruta icono='' ruta='/GestionUsuarios' nombre='Usuarios' />
-        <Ruta icono='' ruta='/GestionVentas' nombre='Ventas' />
-        <Ruta icono='' ruta='/GestionProductos' nombre='Productos' />
+        <Ruta icono='' ruta='/GestionUsuarios' nombre='Usuarios' className='bg-indigo-500 p-1 text-white rounded-md shadow-md hover:bg-red-400' />
+        <Ruta icono='' ruta='/GestionVentas' nombre='Ventas' className='bg-indigo-500 p-1 text-white rounded-md shadow-md hover:bg-red-400' />
+        <Ruta icono='' ruta='/GestionProductos' nombre='Productos' className='bg-indigo-500 p-1 text-white rounded-md shadow-md hover:bg-red-400' />
       </div>
       <button onClick={() => cerrarSesion() } className='bg-indigo-500 p-1 text-white rounded-md shadow-md hover:bg-red-400'>
        Cerrar Sesión
