@@ -2,7 +2,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'styles/EstiloGestionVentas.css';
 import React, { useEffect, useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCheck, faUserEdit } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faEdit } from '@fortawesome/free-solid-svg-icons';
 import IconoVentas from 'media/IconoVentas.png';
 import { ToastContainer, toast } from 'react-toastify';
 import { nanoid } from 'nanoid';
@@ -95,7 +95,7 @@ const RegistroVentas=({setMostrarTabla, listaVentas, setVentas, getToken})=>{
                 method: 'POST',
                 url: 'https://intense-castle-32619.herokuapp.com/ventas/',
                 headers: { 'Content-Type': 'application/json', Authorization: getToken() },
-                data: { iD: nuevaVenta.iD, total: nuevaVenta.total, descripcion: nuevaVenta.descripcion, fechaPago: nuevaVenta.fechaPago, fechaFutura: nuevaVenta.fechaFutura, vendedor: nuevaVenta.vendedor},
+                data: { iD: nuevaVenta.iD, total: nuevaVenta.total, cantidad: nuevaVenta.cantidad, preciounitario: nuevaVenta.preciounitario, fechaventa: nuevaVenta.fechaventa, vendedor: nuevaVenta.vendedor, identificacioncliente: nuevaVenta.identificacioncliente, nombrecliente: nuevaVenta.nombrecliente, estadoventa: nuevaVenta.estadoventa},
                 };
                   
             await axios
@@ -117,9 +117,9 @@ const RegistroVentas=({setMostrarTabla, listaVentas, setVentas, getToken})=>{
     return(
             <div className='flex flex-col items-center justify-center'>   
              <img src={IconoVentas} alt='imagen' className='h-40 w-auto my-7 rounded-full' />   
-            <form ref={form} onSubmit={submitForm} className='flex flex-col'>
-                <h1 className='font-bold text-2xl text-green-500 my-5 text-center'> Registro de Ventas</h1>
-                <div className='flex flex-row'>
+            <form ref={form} onSubmit={submitForm} className='flex flex-col justify-center'>
+                <h1 className='font-bold text-3xl text-green-500 my-5 text-center'> Registro de Ventas</h1>
+                <div className='flex flex-row justify-center'>
                 <label className='flex flex-col mx-5' htmlFor='iD'> 
                     ID único de venta
                     <input 
@@ -165,6 +165,8 @@ const RegistroVentas=({setMostrarTabla, listaVentas, setVentas, getToken})=>{
                         type='date' 
                         placeholder='20-02-2022' />
                 </label>
+                </div>
+                <div className='flex flex-row justify-center'>
                 <label className='flex flex-col' htmlFor='identificacioncliente'> 
                     Identificación cliente 
                     <input 
@@ -203,9 +205,12 @@ const RegistroVentas=({setMostrarTabla, listaVentas, setVentas, getToken})=>{
                     </select>
                 </label>
                 </div>
+                
                                 
             <div className='my-4' align='center'>
-              <button type='submit'className='bg-green-400 text-white font-bold rounded-full p-2'>Guardar Datos</button>
+                    <button type='submit'className='bg-green-500 text-white font-bold rounded-full p-2'>
+                  Guardar Datos
+                </button>
             </div>
         </form>
         </div>  
@@ -234,7 +239,7 @@ const TablaVentas=({listaVentas, setConsulta, getToken})=>{
                 onChange={(e)=>setBuscar(e.target.value)}
                 className= 'border-2 border-green-700 px-3 py-1 rounded-md focus:outline-none focus:border-green-500'
                 />
-                < table className='tabla border border-green-500 table-auto'>
+                <table className='tabla border border-green-500 table-auto'>
                     <thead>
                     <tr>
                         <th className='border border-green-600'>ID</th>
@@ -254,8 +259,10 @@ const TablaVentas=({listaVentas, setConsulta, getToken})=>{
                         return (
                             <FilaVentas key={nanoid()} ventas={ventas} setConsulta={setConsulta} getToken={getToken}/>
                             );
-                    })}
-                        </tbody>
+                            }   
+                            )
+                        }
+                    </tbody>
                 </table>
             </div>
     )
@@ -350,9 +357,9 @@ const FilaVentas = ({ventas, setConsulta, getToken})=>{
         <td>
             <div className='flex items-center justify-center'>
             {editar ? (
-                <FontAwesomeIcon onClick={()=>actualizarVentas() } icon={faUserCheck} className='text-green-400 hover:text-yellow-900' />
+                <FontAwesomeIcon onClick={()=>actualizarVentas() } icon={faCheck} className='text-green-400 hover:text-yellow-900' />
             ):(
-                <FontAwesomeIcon onClick={()=>setEditar(!editar)} icon={faUserEdit} className='text-green-400 hover:text-yellow-900' />
+                <FontAwesomeIcon onClick={()=>setEditar(!editar)} icon={faEdit} className='text-green-400 hover:text-yellow-900' />
             )} 
             </div>
         </td>
