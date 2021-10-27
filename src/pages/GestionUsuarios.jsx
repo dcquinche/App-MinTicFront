@@ -182,8 +182,8 @@ const RegistroUsuarios=({setMostrarTabla, listaUsuarios, setUsuarios, getToken})
                         defaultValue={0}>
 
                         <option disabled value={0}>Seleccione una opción</option>
-                        <option value="admin">Administrador</option>
-                        <option value="vendedor">Vendedor</option>
+                        <option >Administrador</option>
+                        <option >Vendedor</option>
                     </select>
                 </label>
                 </div>
