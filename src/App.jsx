@@ -16,7 +16,7 @@ function App() {
   return (
     <Auth0Provider domain="coffeecoders-mintic.us.auth0.com"
     clientId="edxTN4GxPbyqKvscYNUQgWamqbtkHUaa"
-    redirectUri="http://localhost:3000/GestionUsuarios"
+    redirectUri="https://cryptic-anchorage-66262.herokuapp.com/GestionUsuarios"
     audience="api-autenticacion-coffeecoders">
       <Router>
           <Switch>        
