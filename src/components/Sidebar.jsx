@@ -32,13 +32,10 @@ const Sidebar = () => {
 };
 
 const Ruta = ({ icono, ruta, nombre }) => {
-  const isActive = useActiveRoute(ruta);
   return (
     <Link to={ruta}>
       <button
-        className={`p-1 my-2  bg-${
-          isActive ? 'indigo' : 'to-blue-500'
-        }-700 hover:bg-red-400 flex w-full items-center text-white rounded-md`}
+        className='bg-indigo-500 p-1 text-white rounded-md shadow-md hover:bg-red-400'
       >
         <icon className={`${icono} w-10`} />
         {nombre}
