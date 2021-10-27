@@ -198,6 +198,7 @@ const FormularioRegistroProductos = ({setMostrarTabla, listaProductos, setProduc
                         required
                     />
                 </label>
+                </div>
                 <div className='flex items-center'>
                 <label className='flex flex-col mx-5' htmlFor='estado'>
                     Estado
@@ -213,8 +214,7 @@ const FormularioRegistroProductos = ({setMostrarTabla, listaProductos, setProduc
                     </select>
                 </label>
                 </div>
-                
-                </div>
+
 
             <div className='my-4' align='center'>
                 <button 
