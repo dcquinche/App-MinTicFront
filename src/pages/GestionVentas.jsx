@@ -296,6 +296,7 @@ const FilaVentas = ({ventas, setConsulta, getToken})=>{
           await axios.request(options).then(function (response) {
             console.log(response.data);
             toast.success('Venta modificada con éxito');
+            setEditar(false);
             setConsulta(true);
           }).catch(function (error) {
             toast.error('Error modificando los datos de la venta');
