@@ -19,7 +19,7 @@ const Sidebar = () => {
         <ImagenSidebar />
       </Link>
 
-      <div className='my-4'>
+      <div flex className='my-4'>
         <Ruta icono='' ruta='/GestionUsuarios' nombre='Usuarios' />
         <Ruta icono='' ruta='/GestionVentas' nombre='Ventas' />
         <Ruta icono='' ruta='/GestionProductos' nombre='Productos'/>
@@ -35,7 +35,7 @@ const Ruta = ({ icono, ruta, nombre }) => {
   return (
     <Link to={ruta}>
       <button
-        className='bg-indigo-500 p-1 text-white rounded-md shadow-md hover:bg-red-400'
+        className='flex w-full items-center bg-indigo-500 p-1 text-white rounded-md shadow-md hover:bg-red-400'
       >
         <icon className={`${icono} w-10`} />
         {nombre}
