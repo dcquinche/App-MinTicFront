@@ -3,7 +3,6 @@ import React, { useEffect, useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import IconoProductos from 'media/logoProductos.jpeg';
 import { faCheck, faEdit } from '@fortawesome/free-solid-svg-icons';
-import LogoProductos from 'media/logoproductos.png';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import { nanoid } from 'nanoid';
